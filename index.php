@@ -83,13 +83,13 @@ $app_secret = "4455966b1f04e3365ce24df9ba8629fb";
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">SUS<span class="dot">.</span>SO</a>
+          <a class="navbar-brand" href="/?list=blogosphere">SUS<span class="dot">.</span>SO</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/?list=fashion">Fashion</a></li>
-            <!--<li><a href="/?list=popmusic">Pop Music</a></li>-->
-            <li><a href="/?list=covers">YouTube Music</a></li>
+            <li><a href="/?list=blogosphere">Blogosphere</a></li>
+            <li><a href="/?list=fashion">Fashion</a></li>
+            <li><a href="/?list=covers">Music Covers</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

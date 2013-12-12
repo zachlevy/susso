@@ -59,11 +59,42 @@ $(document).ready(function(){
             'hm'
             */
         );
-    } else if (getUrlVars()['list'] == 'tech') {
+    } else if (getUrlVars()['list'] == 'blogosphere') {
         var usernames = new Array (
-            '',
-            ''
+            'BuzzFeed',
+            'Upworthy‎',
+            'mashable',
+            'HuffingtonPost',
+            'reddit',
+            'techcrunch',
+            'businessinsider',
+            'theatlantic',
+            'Gawker‎',
+            'lifehacker‎',
+            'engadget',
+            'mashsocialmedia',
+            'mashabletech',
+            'mashbusiness',
+            'thedailybeast'
         );
+        if (getUrlVars()['amount'] == 'all') {
+            usernames = usernames.concat([
+                'mashusworld',
+                'mashentertain',
+                'mashablevideo',
+                'mashlifestyle',
+                'BuzzFeedNews',
+                'BuzzFeedEnt‎',
+                'BuzzFeedUK‎',
+                'oatmeal',
+                'TheOnion',
+                'HackerNewsOnion',
+                'Gizmodo',
+                'HuffPostUK',
+                'Cheezburger',
+                'CollegeHumor‎'
+            ]);
+        }
     } else {
 
     }
@@ -184,7 +215,7 @@ function sortTweets(tweets) {
 function renderTweets (cleanTweets, start){
     if (start < cleanTweets.length) {
         tw_addToColumn(tw_addToCard(cleanTweets[start]));
-        console.log(cleanTweets[start].username);
+        //console.log(cleanTweets[start].username);
     }
 }
 

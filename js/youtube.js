@@ -7,6 +7,11 @@ function getUrlVars() {
     return vars;
 }
 
+function onVideoClick (videoId) {
+    var playerHtml = '<iframe class="player" src="//www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&loop=0&theme=light&color=white&iv_load_policy=3" frameborder="0" allowfullscreen=""></iframe>';
+    document.getElementById('yt-' + videoId).innerHTML = playerHtml;
+}
+
 //susso api key
 //AIzaSyDGVGXXtr8g-z6pirjLe98-gDF5PavMHrg
 
@@ -29,7 +34,7 @@ function cleanVideos (uncleanStats, uncleanVideos) {
         // snippet
         video['id'] = uncleanVideos['items'][i].id.videoId;
         video['title'] = uncleanVideos['items'][i].snippet.title;
-        video['img'] = uncleanVideos['items'][i].snippet.thumbnails.high.url;
+        video['img'] = uncleanVideos['items'][i].snippet.thumbnails.medium.url;
         video['desc'] = uncleanVideos['items'][i].snippet.description;
         video['time'] = parseYoutubeDate(uncleanVideos['items'][i].snippet.publishedAt); // published
         video['channelId'] = uncleanVideos['items'][i].snippet.channelId;
@@ -90,8 +95,25 @@ function renderVideos (cleanVideos){
 // takes in a clean array and outputs html
 function addToCard (video) {
     //console.log(video.channel);
+    var card = '<div class="card card-yt"><div class="profile"><div class="media-type pull-right"><span onclick="onVideoClick(\'' 
+    + video.id + '\')" class="glyphicon glyphicon-play-circle"></span></div><div class="img-wrap"><img class= "img-circle" src="http://placehold.it/48x48"></div><div class="user-wrap"><h2 class="channel">' 
+    + video.channel + '</h2></div></div><div id="yt-' 
+    + video.id + '" onclick="onVideoClick(\'' 
+    + video.id + '\')" class="video"><img src="' 
+    + video.img + '" /></div><div class="text"><h2 class="title">' 
+    + video.title + '</h2><ul class="stats"><li class="views"><span class="glyphicon glyphicon-eye-open"></span><span class="count">' 
+    + video.views + '</span></li><li class="likes"><span class="glyphicon glyphicon-heart"></span><span class="count">' 
+    + video.likes + '</span></li><li class="time pull-right"><span class="glyphicon glyphicon-time"></span><span class="ago">' 
+    + video.time + '</span></li></ul></div></div>';
+    return card;
+}
+
+// takes in a clean array and outputs html
+/*
+function addToCard (video) {
+    //console.log(video.channel);
     var card = '<div class="card card-yt"><div class="profile"><div class="img-wrap"><img class= "img-circle" src="http://placehold.it/48x48"></div><div class="user-wrap"><h2 class="channel">' 
-    + video.channel + '</h2></div></div><div class="video"><iframe class="player" src="//www.youtube.com/embed/' 
+    + video.channel + '</h2></div></div><div id="yt-' + video.id + '" class="video"><iframe class="player" src="//www.youtube.com/embed/' 
     + video.id + '" frameborder="0" allowfullscreen></iframe></div><div class="text"><h2 class="title">' 
     + video.title + '</h2><ul class="stats"><li class="views"><span class="glyphicon glyphicon-eye-open"></span><span class="count">' 
     + video.views + '</span></li><li class="likes"><span class="glyphicon glyphicon-heart"></span><span class="count">' 
@@ -99,6 +121,7 @@ function addToCard (video) {
     + video.time + '</span></li></ul></div></div>';
     return card;
 }
+*/
 
 // takes in html and puts it into a random column
 function addToColumn (card) {
@@ -197,10 +220,18 @@ function channelSearch() {
                 ''
             ]);
         }
-    } else if (getUrlVars()['list'] == 'tech') {
+    } else if (getUrlVars()['list'] == 'blogosphere') {
         var channels = new Array (
-            '', //KHS
-            'UCgITW_70LNZFkNna7VsXbuQ' //peterhollens
+            'UCswDowOOvJ-fkCgH9YAITjQ', //upworthy 
+            'UCL8Nxsa1LB9DrMTHtt3IKiw', //Mashable 
+            'UCpko_-a4wgz2u_DgDgd9fqA', //BuzzFeedVideo 
+            'UCK0z0_5uL7mb9IjntOKi5XQ', //TheAtlantic 
+            'UCcyq283he07B7_KUX07mmtA', //Business Insider 
+            'UCCjyq_K1Xwfg8Lndy7lKMpA', //TechCrunch 
+            'UC-6OW5aJYBFM33zXQlBKPNA', //Engadget 
+            'UCYGnmkFGP4EgAOqu58JA_lg', //Lifehacker 
+            'UCUgrUBKwSnXwQOBG4v3igMg', //reddit 
+            'UCay_OLhWtf9iklq8zg_or0g' //BuzzFeedYellow 
         );
     } else {
 

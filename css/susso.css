@@ -78,6 +78,16 @@ ul.stats ,
 	width: 100%;
 	height: 200px;
 }
+.card-yt .video:hover {
+	background-image: src(../images/play_button_white_100x100.png) center center no-repeat;
+}
+.card-yt .video img {
+	width: 100%;
+	cursor: pointer;
+}
+.card-yt .video img:hover {
+	opacity: 0.8;
+}
 .card-yt .profile .channel {
 	margin-top: 0.7em;
 	margin-left: 3em;
@@ -93,6 +103,16 @@ ul.stats ,
 	margin-right: 1em;
 	font-size: 1.5em;
 }
+.card-yt .profile .media-type {
+	display: inline;
+	margin-right: 1em;
+}
+.card-yt .profile .media-type span {
+	font-size: 25px;
+	color: #008b98;
+	cursor: pointer;
+}
+
 /* twitter card */
 .card-tw {
 
