@@ -23,12 +23,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .card {
 .card-yt .profile .channel,
 .text .title,
 .card-tw .profile .name,
-.card-tw .tweet-wrap .tweet {
+.card-tw .tweet-wrap .tweet,
+.card-fb .text h2.message,
+.card-fb .profile .page {
 	color: #999;
 }
 ul.stats ,
 .glyphicon,
-.card-tw .profile .handle {
+.card-tw .profile .handle,
+.card-fb .link span.url {
 	color: #bbb;
 }
 .card a {
@@ -67,23 +70,65 @@ ul.stats ,
 .card .user-wrap {
 	margin-left: 1em;
 }
-/* youtube card */
-.card-yt {
-	
+/* facebook card */
+.card-fb .photo img {
+	width: 100%;
 }
+.card-fb .profile .media-type {
+	margin-top: 0.1em;
+	margin-right: 1em;
+	font-size: 30px;
+	color: #3b5998;
+}
+.card-fb .profile .page {
+	margin-top: 0.7em;
+	margin-left: 3em;
+	font-size: 1.5em;
+	padding-top: 0.6em;
+}
+.card-fb .text h2.message {
+	margin: 1em;
+	font-size: 1.3em;
+	line-height: 1.2em;
+	overflow: none;
+}
+.card-fb .link img {
+	display: block;
+	float: left;
+	margin-left: 1em;
+}
+.card-fb .link h2.title {
+	font-size: 1.2em;
+	display: block;
+	margin: 0.3em 0.5em 0 10.5em;
+}
+.card-fb .link span.url {
+	margin-left: 12.7em;
+	display: block;
+}
+/* youtube card */
 .card-yt .video {
 	margin: 1em 0;
+	position: relative;
+}
+.card-yt .video .play-image {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	cursor: pointer;
+}
+.card-yt .video .play-image {
+	background: url(../images/play_button_white_100x100.png) center center no-repeat;
+}
+.card-yt .video .play-image:hover {
+	background: url(../images/play_button_gray_100x100.png) center center no-repeat;	
 }
 .card-yt .video .player {
 	width: 100%;
 	height: 200px;
 }
-.card-yt .video:hover {
-	background-image: src(../images/play_button_white_100x100.png) center center no-repeat;
-}
 .card-yt .video img {
 	width: 100%;
-	cursor: pointer;
 }
 .card-yt .video img:hover {
 	opacity: 0.8;
@@ -101,18 +146,14 @@ ul.stats ,
 	margin-top: 0.5em;
 	margin-left: 1em;
 	margin-right: 1em;
-	font-size: 1.5em;
+	font-size: 1.3em;
 }
 .card-yt .profile .media-type {
-	display: inline;
+	margin-top: 0.1em;
 	margin-right: 1em;
+	font-size: 30px;
+	color: #b31217;
 }
-.card-yt .profile .media-type span {
-	font-size: 25px;
-	color: #008b98;
-	cursor: pointer;
-}
-
 /* twitter card */
 .card-tw {
 
@@ -147,6 +188,12 @@ ul.stats ,
 	margin-top: 0em;
 	margin-left: 4.5em;
 	font-size: 1em;
+}
+.card-tw .profile .media-type {
+	margin-top: 0.1em;
+	margin-right: 0.9em;
+	font-size: 30px;
+	color: #00acee;
 }
 .card-tw.card-tw-text .tweet-wrap .tweet {
 	font-size: 1.3em;

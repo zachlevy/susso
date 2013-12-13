@@ -42,7 +42,7 @@ $(document).ready(function(){
             'voguemagazine',
             'womensweardaily',
             'ELLEmagazine',
-            'styledotcom'/*,
+            'styledotcom',
             'Fashionista_com',
             'victoriabeckham',
             'RachelZoe',
@@ -57,7 +57,6 @@ $(document).ready(function(){
             'NylonMag',
             'Cosmopolitan',
             'hm'
-            */
         );
     } else if (getUrlVars()['list'] == 'blogosphere') {
         var usernames = new Array (
@@ -159,7 +158,7 @@ function parseTwitterDate(tdate) {
     if (diff <= 129600) {return "1 day ago";}
     if (diff < 604800) {return Math.round(diff / 86400) + " days ago";}
     if (diff <= 777600) {return "1 week ago";}
-    return "on " + system_date;
+    return "over a week ago";
 }
 
 function tweetLinks (tweet) {
@@ -222,7 +221,8 @@ function renderTweets (cleanTweets, start){
 // takes in a clean array and outputs html
 function tw_addToCard (tweet) {
     //console.log(tweet.username);
-    var card = '<div class="card card-tw card-tw-text"><div class="profile"><div class="img-wrap"><img class= "img-circle" src="' 
+    var card = '<div class="card card-tw card-tw-text"><div class="profile"><div class="media-type pull-right">' 
+        + '<i class="fa fa-twitter"></i></div><div class="img-wrap"><img class= "img-circle" src="' 
     + tweet.userimg + '"></div><div class="user-wrap"><h2 class="name">' 
     + tweet.username + '</h2><h3 class="handle">@' 
     + tweet.screenname + '</h3></div></div><div class="tweet-wrap"><span class="tweet center-block">' 

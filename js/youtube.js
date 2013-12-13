@@ -95,11 +95,10 @@ function renderVideos (cleanVideos){
 // takes in a clean array and outputs html
 function addToCard (video) {
     //console.log(video.channel);
-    var card = '<div class="card card-yt"><div class="profile"><div class="media-type pull-right"><span onclick="onVideoClick(\'' 
-    + video.id + '\')" class="glyphicon glyphicon-play-circle"></span></div><div class="img-wrap"><img class= "img-circle" src="http://placehold.it/48x48"></div><div class="user-wrap"><h2 class="channel">' 
+    var card = '<div class="card card-yt"><div class="profile"><div class="media-type pull-right"><i class="fa fa-youtube-play"></i></span></div><div class="img-wrap"><img class= "img-circle" src="http://placehold.it/48x48"></div><div class="user-wrap"><h2 class="channel">' 
     + video.channel + '</h2></div></div><div id="yt-' 
     + video.id + '" onclick="onVideoClick(\'' 
-    + video.id + '\')" class="video"><img src="' 
+    + video.id + '\')" class="video"><div class="play-image"></div><img src="' 
     + video.img + '" /></div><div class="text"><h2 class="title">' 
     + video.title + '</h2><ul class="stats"><li class="views"><span class="glyphicon glyphicon-eye-open"></span><span class="count">' 
     + video.views + '</span></li><li class="likes"><span class="glyphicon glyphicon-heart"></span><span class="count">' 
