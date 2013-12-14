@@ -105,7 +105,7 @@ $(document).ready(function(){
 
 
 function profileSearch (profiles) {
-    console.log('profiles: ' + profiles);
+    //console.log('profiles: ' + profiles);
     for (i = 0; i < profiles.length; i++) {
         //var profile = profiles[i];
         searchProfile(profiles[i]);
@@ -121,7 +121,7 @@ function searchProfile (profile) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            console.log('success' + profile + ': ' + xmlhttp.status);
+            //console.log('success' + profile + ': ' + xmlhttp.status);
             // do whatever with the response
             var cleanPosts = sortPosts(cleanFacebook(JSON.parse(xmlhttp.responseText)));
             //showFbResponse(cleanPosts);
@@ -136,9 +136,9 @@ function searchProfile (profile) {
         }
     }
     xmlhttp.open('GET', 'php/facebook.php?profile=' + profile, true);
-    console.log('open xmlhttp for: ' + profile);
+    //console.log('open xmlhttp for: ' + profile);
     xmlhttp.send();
-    console.log('send xmlhttp' + profile);
+    //console.log('send xmlhttp' + profile);
 }
 
 // renders the posts on a page
@@ -147,7 +147,7 @@ function renderPosts (cleanPosts) {
     if (cleanPosts.length < pagePostsLimit) {
         pagePostsLimit = cleanPosts.length;
     }
-    console.log('pagePostsLimit: ' + pagePostsLimit);
+    //console.log('pagePostsLimit: ' + pagePostsLimit);
     for (var i = 0; i < pagePostsLimit; i++) {
         //console.log(cleanPosts[i]);
         fb_addToColumn(fbAddToCard(cleanPosts[i]));
@@ -300,15 +300,17 @@ function fbAddToCard (post) {
 
 function fb_addToColumn (card) {
     column = Math.floor((Math.random()*3)+1);
-    console.log(card);
-    console.log(column);
+    //console.log(card);
+    //console.log(column);
     //card = 'successful card';
     document.getElementById('column'+column).innerHTML += card;
 }
 
 function parseFacebookPhoto (photo) {
-    photo = photo.replace('_s.png', '_n.png');
-    photo = photo.replace('_s.jpg', '_n.jpg');
+    if (typeof(photo) != 'undefined') {
+        photo = photo.replace('_s.png', '_n.png');
+        photo = photo.replace('_s.jpg', '_n.jpg');
+    }
     return photo;
 }
 
@@ -373,7 +375,7 @@ function fbLinks (tweet) {
 }
 */
 
-// sorts the cleaned tweets
+// sorts the cleaned posts
 function sortPosts(posts) {
     posts.sort(function(a, b){
         return (b.likes + b.shares)-(a.likes + a.shares);

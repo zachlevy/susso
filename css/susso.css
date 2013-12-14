@@ -25,13 +25,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .card {
 .card-tw .profile .name,
 .card-tw .tweet-wrap .tweet,
 .card-fb .text h2.message,
-.card-fb .profile .page {
+.card-fb .profile .page,
+.card-ig .profile .user,
+.card-ig .text h2.message {
 	color: #999;
 }
 ul.stats ,
 .glyphicon,
 .card-tw .profile .handle,
-.card-fb .link span.url {
+.card-fb .link span.url,
+.card-ig .profile .handle {
 	color: #bbb;
 }
 .card a {
@@ -69,6 +72,34 @@ ul.stats ,
 }
 .card .user-wrap {
 	margin-left: 1em;
+}
+/* instagram card */
+.card-ig .photo img {
+	width: 100%;
+}
+.card-ig .profile .media-type {
+	margin-top: 0.1em;
+	margin-right: 1em;
+	font-size: 30px;
+	color: #3f729b	
+}
+.card-ig .profile .user {
+	margin-top: 0.7em;
+	margin-left: 3em;
+	font-size: 1.5em;
+	padding-top: 0.4em;
+	margin-bottom: 0;
+}
+.card-ig .profile .handle {
+	margin-top: 0em;
+	margin-left: 4.5em;
+	font-size: 1em;
+}
+.card-ig .text h2.message {
+	margin: 1em;
+	font-size: 1.3em;
+	line-height: 1.2em;
+	overflow: none;
 }
 /* facebook card */
 .card-fb .photo img {

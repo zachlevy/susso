@@ -61,15 +61,15 @@ $(document).ready(function(){
     } else if (getUrlVars()['list'] == 'blogosphere') {
         var usernames = new Array (
             'BuzzFeed',
-            'Upworthy‎',
+            'Upworthy',
             'mashable',
             'HuffingtonPost',
             'reddit',
             'techcrunch',
             'businessinsider',
             'theatlantic',
-            'Gawker‎',
-            'lifehacker‎',
+            'Gawker',
+            'lifehacker',
             'engadget',
             'mashsocialmedia',
             'mashabletech',

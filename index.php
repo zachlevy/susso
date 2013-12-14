@@ -1,3 +1,5 @@
+<?php //header('Access-Control-Allow-Origin: *'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,7 +32,7 @@
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/youtube.js"></script>
-
+    <script type="text/javascript" src="js/instagram.js"></script>
     <script type="text/javascript" src="js/sha1.js"></script>
     <script type="text/javascript" src="js/codebird.js"></script>
     <script type="text/javascript" src="js/twitter.js"></script>
@@ -252,12 +254,13 @@
 
         </div>
       </div>
+      <!--
       <div class="row">
         <div class="col-lg-12">
           <button type="button" class="btn btn-info">Moar!</button>
         </div>
       </div>
-
+      -->
       <!--
       <div class="row">
         <div class="col-lg-12">
@@ -269,12 +272,7 @@
           </pre>
           <h1>Instagram Results</h1>
           <pre id="ig-response">
-            <div class="instagram"></div>
-            <script type="text/javascript" src="js/instajs/dist/instagram.min.js"></script>
-            <script type="text/javascript" src="js/instagram.js"></script>
           </pre>
-          
-          
           <h1>Facebook Results</h1>
           <pre id="fb-response">
             <?php //echo $json_object; ?>
