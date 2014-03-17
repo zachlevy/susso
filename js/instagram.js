@@ -1,4 +1,4 @@
-var igClientId = '71e25c03f283472ca061a018f41bbc41';
+var igClientId = 'CLIENT_ID'; // replace with your own
 
 // lets get ready to rumble
 $(document).ready(function(){

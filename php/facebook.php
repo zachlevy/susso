@@ -20,8 +20,8 @@ $profile_id = $_GET['profile'];
 //$profile_id = "zacharyaaronlevy";
 
 //App Info, needed for Auth
-$app_id = "1401787890061401";
-$app_secret = "4455966b1f04e3365ce24df9ba8629fb";
+$app_id = "APP_ID"; // replace with your own
+$app_secret = "APP_SECRET"; // replace with your own
 
 //Retrieve auth token
 $authToken = fetchUrl("https://graph.facebook.com/oauth/access_token?grant_type=client_credentials&client_id={$app_id}&client_secret={$app_secret}");

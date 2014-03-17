@@ -249,8 +249,8 @@ function showTweets (tweets) {
 // get the tweets from a given user
 function getTweets (username, start) {
     var cb = new Codebird;
-    cb.setConsumerKey("0O9BFXkurl2LPtCnKZVQjA", "XPYHIDp5Xg2KCYrAr2zZVdA78J6WMqNXJPdWDuTT2A");
-    cb.setToken("1020706052-SI3WEA9nztsqXHX72vUrILBXXUCjb5hgbyizeZY", "v7b5WLZ9WKAs9ikHZnML01rOLIhBysMHqb4gKPHr2xMOc");
+    cb.setConsumerKey("API_KEY", "API_SECRET"); // replace with your own
+    cb.setToken("ACCESS_TOKEN", "ACCESS_TOKEN_SECRET");
     cb.__call(
         "statuses_userTimeline",
         {
